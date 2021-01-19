@@ -1,6 +1,6 @@
-# pohja
+# Wild Magic
 
-Pohja kevään 2020 harjoitustöiden GIT-repoille
+Epic wild magic generator for DnD 5e
 
-Lue käyttöohjeet TIMistä: <https://tim.jyu.fi/view/kurssit/tie/ohj2/tyokalut/git/ohj2git#fork>
+Read instructions (In finnish for now): <https://tim.jyu.fi/view/kurssit/tie/ohj2/2021k/ht/nimisihv#mtypuo4cyMgg>
 
