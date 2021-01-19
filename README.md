@@ -1,4 +1,4 @@
-# Wild MAgic
+# Wild Magic
 
 Epic wild magic generator for DnD 5e
 
