@@ -28,6 +28,7 @@ public class WildMagicGUIController {
 	
 	// Edit items
 	@FXML MenuItem addMenufx;
+	@FXML MenuItem editMenufx;
 	@FXML MenuItem deleteMenufx;
 	
 	// Help items
