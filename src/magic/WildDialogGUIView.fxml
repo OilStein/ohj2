@@ -16,8 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/15.0.1" fx:controller="magic.WildDialogGUIController">
+<BorderPane xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="magic.WildDialogGUIController">
    <center>
       <GridPane hgap="5.0" vgap="5.0" BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -69,31 +68,31 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </GridPane.margin>
             </Label>
-            <ComboBoxChooser fx:id="addSchoolfx" rivit="Abjuration&#10;Conjuration&#10;Divination&#10;Enchantment &#10;Evocation&#10;Illusion &#10;Necromancy &#10;Transmutation" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <ComboBoxChooser fx:id="cbcSchool" rivit="Abjuration&#10;Conjuration&#10;Divination&#10;Enchantment &#10;Evocation&#10;Illusion &#10;Necromancy &#10;Transmutation" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                </GridPane.margin>
             </ComboBoxChooser>
-            <TextField fx:id="addNamefx" GridPane.columnIndex="1">
+            <TextField fx:id="textName" GridPane.columnIndex="1">
                <GridPane.margin>
                   <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                </GridPane.margin>
             </TextField>
-            <ComboBoxChooser fx:id="addlvlfx" rivit="0&#10;1&#10;2&#10;3&#10;4&#10;5&#10;6&#10;7&#10;8&#10;9" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <ComboBoxChooser fx:id="cbcLvl" rivit="0&#10;1&#10;2&#10;3&#10;4&#10;5&#10;6&#10;7&#10;8&#10;9" GridPane.columnIndex="1" GridPane.rowIndex="2">
                <GridPane.margin>
                   <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                </GridPane.margin>
             </ComboBoxChooser>
-            <ComboBoxChooser fx:id="addCastfx" editable="true" rivit="1 Action&#10;1 Bonus action&#10;Reaction" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <ComboBoxChooser fx:id="addRangefx" editable="true" rivit="Self&#10;Touch&#10;30ft&#10;60ft" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <ComboBoxChooser fx:id="addDurationfx" editable="true" rivit="Instantaneous&#10;Concentration, up to 1 minute&#10;Concentration, up to 10 minutes&#10;1 minute&#10;10 minutes&#10;1 hour&#10;8 hours&#10;24 hours" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <ComboBoxChooser fx:id="cbcCast" editable="true" rivit="1 Action&#10;1 Bonus action&#10;Reaction" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <ComboBoxChooser fx:id="cbcRange" editable="true" rivit="Self&#10;Touch&#10;30ft&#10;60ft" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <ComboBoxChooser fx:id="cbcDuration" editable="true" rivit="Instantaneous&#10;Concentration, up to 1 minute&#10;Concentration, up to 10 minutes&#10;1 minute&#10;10 minutes&#10;1 hour&#10;8 hours&#10;24 hours" GridPane.columnIndex="1" GridPane.rowIndex="5" />
             <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
                <center>
                   <HBox BorderPane.alignment="CENTER">
                      <children>
-                        <RadioButtonChooser fx:id="addVerbalfx" rivit="Verbal" />
-                        <RadioButtonChooser fx:id="addSomaticfx" rivit="Somatic&#10;" />
-                        <RadioButtonChooser fx:id="addMaterialfx" rivit="Material" />
+                        <RadioButtonChooser fx:id="dotVerbal" rivit="Verbal" />
+                        <RadioButtonChooser fx:id="dotSomatic" rivit="Somatic&#10;" />
+                        <RadioButtonChooser fx:id="dorMaterial" rivit="Material" />
                      </children>
                   </HBox>
                </center>
@@ -114,7 +113,7 @@
             </Label>
             <ScrollPane>
                <content>
-                  <TextArea />
+                  <TextArea fx:id="textDesc" />
                </content>
                <VBox.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -137,7 +136,7 @@
                   <RadioButtonChooser fx:id="dotWizard" rivit="Wizard&#10;&#10;" />
                </children>
             </HBox>
-            <Button fx:id="addSavefx" mnemonicParsing="false" text="Save">
+            <Button fx:id="buttonSave" mnemonicParsing="false" text="Save">
                <VBox.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </VBox.margin>
