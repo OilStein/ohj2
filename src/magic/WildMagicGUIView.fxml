@@ -20,14 +20,14 @@
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-              <MenuItem fx:id="closeMenufx" mnemonicParsing="false" text="Close" />
+              <MenuItem fx:id="closeMenufx" mnemonicParsing="false" onAction="#handleCloseMenu" text="Close" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Edit">
             <items>
-              <MenuItem fx:id="addMenufx" mnemonicParsing="false" text="Add" />
-                  <MenuItem fx:id="editMenufx" mnemonicParsing="false" text="Add" />
-                  <MenuItem fx:id="deleteMenufx" mnemonicParsing="false" text="Delete" />
+              <MenuItem fx:id="addMenufx" mnemonicParsing="false" onAction="#handleAddMenu" text="Add" />
+                  <MenuItem fx:id="editMenufx" mnemonicParsing="false" onAction="#handleEditMenu" text="Add" />
+                  <MenuItem fx:id="deleteMenufx" mnemonicParsing="false" onAction="#handleDeleteMenu" text="Delete" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
@@ -42,7 +42,7 @@
    <center>
       <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <center>
-            <StringGrid fx:id="spellGrid" prefHeight="348.0" prefWidth="720.0" rivit="Name | School | Level| Casting Time | Range | Duration | Components&#10;Fireball | Evocation |3| 1 action | 150ft | Instanious | VSM&#10;Friends | Enchantment |0| 1 action | Self | Concentration, 1 min| V" BorderPane.alignment="CENTER">
+            <StringGrid fx:id="spellGrid" onMouseClicked="#handleDescription" prefHeight="348.0" prefWidth="720.0" rivit="Name | School | Level| Casting Time | Range | Duration | Components&#10;Fireball | Evocation |3| 1 action | 150ft | Instanious | VSM&#10;Friends | Enchantment |0| 1 action | Self | Concentration, 1 min| V" BorderPane.alignment="CENTER">
                <columnResizePolicy>
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                </columnResizePolicy>
@@ -61,12 +61,12 @@
          <left>
             <VBox prefHeight="82.0" prefWidth="215.0" BorderPane.alignment="CENTER">
                <children>
-                  <TextField fx:id="textSearch">
+                  <TextField fx:id="textSearch" onAction="#handleSearch">
                      <VBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </VBox.margin>
                   </TextField>
-                  <ComboBoxChooser fx:id="cbcClassSelect" prefHeight="25.0" prefWidth="241.0" rivit="All&#10;Artificer&#10;Bard&#10;Cleric&#10;Druid&#10;Paladin&#10;Ranger&#10;Sorcerer&#10;Warlock&#10;Wizard">
+                  <ComboBoxChooser fx:id="cbcClassSelect" onAction="#handleClassSelect" prefHeight="25.0" prefWidth="241.0" rivit="All&#10;Artificer&#10;Bard&#10;Cleric&#10;Druid&#10;Paladin&#10;Ranger&#10;Sorcerer&#10;Warlock&#10;Wizard">
                      <VBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </VBox.margin>
@@ -77,17 +77,17 @@
          <right>
             <HBox alignment="CENTER" prefHeight="82.0" prefWidth="496.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="buttonAdd" alignment="CENTER" mnemonicParsing="false" prefHeight="70.0" prefWidth="120.0" text="Add Spell">
+                  <Button fx:id="buttonAdd" alignment="CENTER" mnemonicParsing="false" onAction="#handleAddSpell" prefHeight="70.0" prefWidth="120.0" text="Add Spell">
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="buttonRoll" alignment="CENTER" mnemonicParsing="false" prefHeight="70.0" prefWidth="120.0" text="Roll Dice">
+                  <Button fx:id="buttonRoll" alignment="CENTER" mnemonicParsing="false" onAction="#handleRollDice" prefHeight="70.0" prefWidth="120.0" text="Roll Dice">
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="buttonWild" alignment="CENTER" mnemonicParsing="false" prefHeight="70.0" prefWidth="120.0" text="Wild Magic">
+                  <Button fx:id="buttonWild" alignment="CENTER" mnemonicParsing="false" onAction="#handleWildMagic" prefHeight="70.0" prefWidth="120.0" text="Wild Magic">
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
                      </HBox.margin>
