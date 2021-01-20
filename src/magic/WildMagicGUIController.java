@@ -8,12 +8,16 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+
 import fi.jyu.mit.fxgui.ComboBoxChooser;
 import fi.jyu.mit.fxgui.Dialogs;
+import fi.jyu.mit.fxgui.ModalController;
 import fi.jyu.mit.fxgui.StringGrid;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
 
@@ -26,9 +30,72 @@ public class WildMagicGUIController implements Initializable{
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		// TODO Auto-generated method stub
-		
+		// TODO Auto-generated method stub	
 	}
+	
+	// HANDLERS
+	//======================================================
+	
+	// Handle buttons
+	
+	@FXML private void handleAddSpell() {
+		ModalController.showModal(WildMagicGUIController.class.getResource("WildDialogGUIView.fxml"), "Spell Adder", null, "");
+	}
+	
+	@FXML private void handleRollDice() {
+		ModalController.showModal(WildMagicGUIController.class.getResource("WildDiceRollerGUIView.fxml"), "RollerMobster", null, "");
+	}
+	
+	@FXML private void handleWildMagic() {
+		Dialogs.showMessageDialog("Cant handle this yet");
+	}
+	
+	// Menu : File
+	
+	@FXML private void handleCloseMenu() {
+		canClose();
+		Platform.exit();
+	}
+	
+	// Menu : Edit
+	
+	@FXML private void handleAddMenu() {
+		ModalController.showModal(WildMagicGUIController.class.getResource("WildDialogGUIView.fxml"), "Spell Adder", null, "");
+	}
+	
+	@FXML private void handleEditMenu() {
+		ModalController.showModal(WildMagicGUIController.class.getResource("WildDialogGUIView.fxml"), "Spell Adder", null, "");
+	}
+	
+	@FXML private void handleDeleteMenu() {
+		Dialogs.showMessageDialog("Not working yet");
+	}
+	
+	@FXML private void handleHelpMenu() {
+		help();
+	}
+	
+	@FXML private void handleAboutMenu() {
+		Dialogs.showMessageDialog("Author: Niko Sihvo\r\nVersion: 1.2");
+	}
+	
+	// Click spell and print spell handler
+	
+	@FXML private void handleDescription() {
+		// Dialogs.showMessageDialog("Not working yet");
+	}
+	
+	// Searchbar handlers
+	
+	@FXML private void handleSearch() {
+		Dialogs.showMessageDialog("Not working yet");
+	}
+	
+	@FXML private void handleClassSelect() {
+		Dialogs.showMessageDialog("Not working yet");
+	}
+	
+	
 
 	//				FXML ITEMS
 	//=====================================================
@@ -58,11 +125,12 @@ public class WildMagicGUIController implements Initializable{
 	@FXML Button buttonWild;
 	
 	
+	
 	//		CODE
 	//==========================================================
 	
 	public boolean canClose() {
-		Dialogs.showMessageDialog("Wild Magic Rift id Closing");
+		Dialogs.showMessageDialog("Wild Magic is Closing");
 		return true;
 	}
 	
