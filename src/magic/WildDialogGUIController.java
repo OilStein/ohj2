@@ -27,6 +27,7 @@ public class WildDialogGUIController {
 	@FXML RadioButtonChooser<Boolean> dotVerbal;
 	@FXML RadioButtonChooser<Boolean> dotSomatic;
 	@FXML RadioButtonChooser<Boolean> dotMaterial;
+	@FXML TextField textMaterials;
 	
 	
 	// Class radiobuttons
