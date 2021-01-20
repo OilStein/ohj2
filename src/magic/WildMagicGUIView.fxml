@@ -20,7 +20,6 @@
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-                  <MenuItem fx:id="saveMenufx" mnemonicParsing="false" text="Save" />
               <MenuItem fx:id="closeMenufx" mnemonicParsing="false" text="Close" />
             </items>
           </Menu>

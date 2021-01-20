@@ -19,11 +19,10 @@ public class WildMagicGUIController {
 	
 	/**
 	 * 					FXML ITEMS
-	 * ------------------------------------------------------
+	 * =====================================================
 	 */
 	
 	// File items
-	@FXML MenuItem saveMenufx;
 	@FXML MenuItem closeMenufx;
 	
 	// Edit items
