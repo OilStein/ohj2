@@ -33,6 +33,7 @@ public class WildMagicGUIController implements Initializable{
 		// TODO Auto-generated method stub	
 	}
 	
+	
 	// HANDLERS
 	//======================================================
 	
@@ -83,6 +84,13 @@ public class WildMagicGUIController implements Initializable{
 	
 	@FXML private void handleDescription() {
 		// Dialogs.showMessageDialog("Not working yet");
+		spellGrid.setOnMouseClicked(event -> {
+			if(event.getClickCount() == 2) {
+				//Dialogs.showMessageDialog("Can't handle this chaos!");
+				
+				
+			}
+		});
 	}
 	
 	// Searchbar handlers
