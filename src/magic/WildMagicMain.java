@@ -18,11 +18,17 @@ public class WildMagicMain extends Application {
         try {
             FXMLLoader ldr = new FXMLLoader(getClass().getResource("WildMagicGUIView.fxml"));
             final Pane root = ldr.load();
-            //final WildMagicGUIController wildmagicCtrl = (WildMagicGUIController) ldr.getController();
+            final WildMagicGUIController wildmagicCtrl = (WildMagicGUIController) ldr.getController();
+            
             Scene scene = new Scene(root);
             scene.getStylesheets().add(getClass().getResource("wildmagic.css").toExternalForm());
             primaryStage.setScene(scene);
-            primaryStage.setTitle("WildMagic");
+            primaryStage.setTitle("Wild Magic");
+            
+            primaryStage.setOnCloseRequest((event) -> {
+            	if(!wildmagicCtrl.canClose() ) event.consume();
+            });
+            
             primaryStage.show();
         } catch(Exception e) {
             e.printStackTrace();
