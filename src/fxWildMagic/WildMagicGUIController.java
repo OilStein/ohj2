@@ -1,4 +1,4 @@
-package magic;
+package fxWildMagic;
 
 import java.awt.Desktop;
 import java.io.File;
@@ -20,6 +20,7 @@ import javafx.scene.control.Button;
 
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
+import logic.Spell;
 
 /**
  * @author Niko Sihvo
@@ -161,6 +162,16 @@ public class WildMagicGUIController implements Initializable{
 		}
 	}
 	
+	
+	protected void newSpell() {
+		try {
+			Spell newSpell = new Spell();
+			//newSpell.register();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+	}
 	
 	
 	

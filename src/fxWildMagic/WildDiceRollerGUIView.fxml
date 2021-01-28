@@ -37,7 +37,7 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </VBox.margin>
             </Button>
-            <StringGrid fx:id="rollLog" rivit="Roll | Result&#10;1d20 | 12&#10;&#10;">
+            <StringGrid fx:id="rollLog" onMouseClicked="#handleList" rivit="Roll | Result&#10;1d20 | 12&#10;&#10;">
                <columnResizePolicy>
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                </columnResizePolicy>

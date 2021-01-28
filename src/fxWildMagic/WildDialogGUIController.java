@@ -1,4 +1,4 @@
-package magic;
+package fxWildMagic;
 
 import fi.jyu.mit.fxgui.ComboBoxChooser;
 import fi.jyu.mit.fxgui.Dialogs;

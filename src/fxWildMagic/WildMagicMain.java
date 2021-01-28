@@ -1,4 +1,4 @@
-package magic;
+package fxWildMagic;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
