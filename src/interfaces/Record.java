@@ -18,11 +18,11 @@ public interface Record {
 	
 	public void setQ(int q, String qn);
 	
-	public abstract String[] getHead();
+	public abstract String[] getHeadings();
 	
-	public abstract String get(int g);
+	public abstract String get(int f);
 		
-	public abstract String set(int n, String s);
+	public abstract String set(int f, String s);
 	
 	public abstract int getInt(int i);
 	
@@ -38,14 +38,14 @@ public interface Record {
 	
 	public abstract int getIdNum();
 	
-	public abstract int setIdNum(int num);
-	
 	@Override
 	public abstract String toString();
 	
-	public abstract void parse(String l);
+	public abstract void parse(String row);
 	
 	public int getNextNum();
+	
+	public abstract String getKey(int f);
 	
 	@Override
 	public abstract boolean equals(Object data);

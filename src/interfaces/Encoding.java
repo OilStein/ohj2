@@ -60,4 +60,12 @@ public class Encoding {
 			return null;
 		}
 	}
+	
+	public boolean tEncoding(String fileName) {
+		if (isAuto()) {
+			String g = gEncoding(fileName);
+			return g != null;
+		}
+		return true;
+	}
 }

@@ -29,6 +29,8 @@ public interface Records<TYPE extends Record> extends Iterable<TYPE> {
 	
 	public abstract void setFileBaseName(String file);
 	
+	public abstract String getFileBaseName();
+	
 	public abstract String getFileName();
 	
 	public abstract String getBackUp();
@@ -46,5 +48,8 @@ public interface Records<TYPE extends Record> extends Iterable<TYPE> {
 	
 	public void clear();
 	
-	public void setEncoding();
+	public void setEncoding(String encoding);
+	
+	public String getEncoding();
+
 }

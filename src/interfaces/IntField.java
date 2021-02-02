@@ -4,11 +4,11 @@ import javax.swing.SwingConstants;
 
 import fi.jyu.mit.ohj2.Mjonot;
 
-public class IntField extends BasicRecord {
+public class IntField extends BasicField {
 	private int r;
 	
-	public IntField(String q) {
-		super(q);
+	public IntField(String question) {
+		super(question);
 	}
 	
 	public int getValue() {
@@ -29,14 +29,19 @@ public class IntField extends BasicRecord {
 	}
 	
 	@Override
-	public String set(int i, String r) {
+	public String set(String r) {
 		StringBuffer sb = new StringBuffer(r);
 		try {
-			setValue(Mjonot.erota(sb, ' ', 0));
+			setValue(Mjonot.erotaEx(sb, ' ', 0));
 			return null;
-		} catch (Exception e) {
+		} catch (NumberFormatException e) {
 			return "Invalid num -> (" +r+")";
 		}
+	}
+	
+	@Override
+	public String getKey() {
+		return Mjonot.fmt(r, 10);
 	}
 	
 	
@@ -44,12 +49,16 @@ public class IntField extends BasicRecord {
 	public IntField clone() throws CloneNotSupportedException{
 		return (IntField)super.clone();
 	}
-	
+
+	@Override
+	public int compareTo(Field f) {
+		if ( !(f instanceof IntField)) return super.compareTo(f);
+		return getValue()- ((IntField)f).getValue();
+	}
 	
 	@Override
-	public int getLocation(int i) {
+	public int getLocation() {
 		return SwingConstants.RIGHT;
 	}
-
 
 }

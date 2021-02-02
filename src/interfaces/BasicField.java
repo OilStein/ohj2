@@ -3,18 +3,18 @@ package interfaces;
 import javax.swing.SwingConstants;
 
 public abstract class BasicField implements Field {
-	private String q;
+	private String question;
 	
-	protected Checker c = null;
+	protected Checker checker = null;
 	
 	public BasicField(String q) {
-		this.q = q;
+		this.question = q;
 	}
 	
 	
 	public BasicField(String q, Checker c) {
-		this.q = q;
-		this.c = c;
+		this.question = q;
+		this.checker = c;
 	}
 	
 	
@@ -23,12 +23,12 @@ public abstract class BasicField implements Field {
 	
 	@Override
 	public String getQ() {
-		return q;
+		return question;
 	}
 	
 	@Override
 	public void setQ(String q) {
-		this.q = q;
+		this.question = q;
 	}
 	
 	@Override

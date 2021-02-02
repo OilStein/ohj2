@@ -7,8 +7,8 @@ import java.io.PrintWriter;
 import fi.jyu.mit.ohj2.Mjonot;
 
 public abstract class BasicRecord implements Cloneable, Record {
-	
-	protected void setNextNum(int i) {		
+
+	protected void setNextNum(int i) {
 	}
 	
 	abstract protected void setFields(Field[] fields);
@@ -47,7 +47,7 @@ public abstract class BasicRecord implements Cloneable, Record {
 	}
 	
 	@Override
-	public String[] getHead() {
+	public String[] getHeadings() {
 		int n = getData() - firstField();
 		String[] headlines = new String[n] ;
 		for (int i=0, f=firstField(); i<n; i++, f++)
@@ -168,5 +168,21 @@ public abstract class BasicRecord implements Cloneable, Record {
 			hc += get(i).hashCode();
 		}
 		return hc;
+	}
+	
+	@Override
+	public String getKey(int f) {
+		try {
+			return getField(f).getKey();
+		} catch (Exception e) {
+			return "";
+		}
+	}
+	
+	@Override
+	public int getLocation(int l) {
+		Field field = getField(l);
+		if ( field == null ) return 0;
+		return field.getLocation();
 	}
 }

@@ -18,12 +18,12 @@ public class StringField extends BasicField {
 	
 	@Override
 	public String set(String st) {
-		if( c == null) {
+		if( checker == null) {
 			this.s = st;
 			return null;
 		}
 		
-		String error = c.check(s);
+		String error = checker.check(s);
 		if(error == null) {
 			this.s = st;
 			return null;

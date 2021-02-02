@@ -6,19 +6,19 @@ public class IdField extends IntField{
 	private static final HashMap<String, IntField> nextNums = new HashMap<>();
 	private IntField nextNum;
 	
-	public IdField(String q, String a) {
+	public IdField(String q, String id) {
 		super(q);
-		IntField num = nextNums.get(a);
+		IntField num = nextNums.get(id);
 		if(num == null) {
-			num = new IntField(a);
+			num = new IntField(id);
 			num.setValue(1);
 		}
 		nextNum = num;
-		nextNums.put(a, num);
+		nextNums.put(id, num);
 	}
 
 	public String getId() {
-		return nextNum.getQ():
+		return nextNum.getQ();
 	}
 	
 	@Override
