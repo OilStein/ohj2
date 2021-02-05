@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.Collection;
 import java.util.ResourceBundle;
 
 
@@ -20,7 +21,10 @@ import javafx.scene.control.Button;
 
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextField;
+import logic.Description;
+import logic.SailoException;
 import logic.Spell;
+import logic.WildMagic;
 
 /**
  * @author Niko Sihvo
@@ -28,6 +32,8 @@ import logic.Spell;
  *
  */
 public class WildMagicGUIController implements Initializable{
+	
+	
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -41,7 +47,7 @@ public class WildMagicGUIController implements Initializable{
 	// Handle buttons
 	
 	@FXML private void handleAddSpell() {
-		ModalController.showModal(WildMagicGUIController.class.getResource("WildDialogGUIView.fxml"), "Spell Adder", null, "");
+		newSpell();
 	}
 	
 	@FXML private void handleRollDice() {
@@ -55,7 +61,6 @@ public class WildMagicGUIController implements Initializable{
 	// Menu : File
 	
 	@FXML private void handleCloseMenu() {
-		canClose();
 		Platform.exit();
 	}
 	
@@ -122,7 +127,7 @@ public class WildMagicGUIController implements Initializable{
 	@FXML MenuItem aboutMenufx;
 	
 	// Main grid
-	@FXML StringGrid<String> spellGrid;
+	@FXML StringGrid<Spell> spellGrid;
 	
 	// Searchbar and cropping option
 	@FXML TextField textSearch;
@@ -138,9 +143,19 @@ public class WildMagicGUIController implements Initializable{
 	//		CODE
 	//==========================================================
 	
-	public boolean canClose() {
-		Dialogs.showMessageDialog("Wild Magic is Closing");
-		return true;
+	private WildMagic magic;
+	private Spell pointedSpell;
+	private TextField edits[];
+	private int field = 0;
+	private static Spell helpSpell = new Spell();
+	private static Description helpDescription = new Description();
+	
+	protected void format() {
+		spellGrid.clear();
+		
+		cbcClassSelect.clear();
+		
+		
 	}
 	
 	private void help() {
@@ -163,10 +178,44 @@ public class WildMagicGUIController implements Initializable{
 	}
 	
 	
+	protected void find(int num) {
+		int inum = num;
+		if (inum <=0 ) {
+			Spell point = pointedSpell;
+			if (point != null) inum = point.getIdNum();
+		}
+		
+		int f = cbcClassSelect.getSelectedIndex() + helpSpell.firstField();
+		String term = textSearch.getText();
+		if(term.indexOf('*') < 0) term = "*" + term + "*";
+		
+		int index = 0;
+		
+		Collection<Spell> spells;
+		try {
+			spells = magic.search(term, f);
+			int i = 0;
+			for (Spell spell : spells) {
+				if ( spell.getIdNum() == inum) {
+					index = i;
+				}
+				spellGrid.add(spell);
+				i++;
+			}
+		} catch (SailoException e) {
+			Dialogs.showMessageDialog("Couldnät find anything, Error: " + e.getMessage());
+		}
+	}
+	
+	
 	protected void newSpell() {
 		try {
 			Spell newSpell = new Spell();
-			//newSpell.register();
+			newSpell = SpellDialogController.askSpell(null, newSpell, 1);
+			if (newSpell == null) return;
+			newSpell.register();
+			magic.add(newSpell);
+			find(newSpell.getIdNum());
 		} catch (Exception e) {
 			// TODO: handle exception
 		}

@@ -16,9 +16,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxMagic.WildDialogGUIController">
+<BorderPane xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxMagic.SpellDialogController">
    <center>
-      <GridPane hgap="5.0" vgap="5.0" BorderPane.alignment="CENTER">
+      <GridPane fx:id="gridSpell" hgap="5.0" vgap="5.0" BorderPane.alignment="CENTER">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="234.0" minWidth="10.0" prefWidth="147.0" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="336.0" minWidth="10.0" prefWidth="330.0" />
@@ -106,7 +106,7 @@
       </GridPane>
    </center>
    <bottom>
-      <VBox alignment="CENTER" BorderPane.alignment="CENTER">
+      <VBox fx:id="vboxDesc" alignment="CENTER" BorderPane.alignment="CENTER">
          <children>
             <Label alignment="TOP_LEFT" text="Description" underline="true">
                <VBox.margin>
