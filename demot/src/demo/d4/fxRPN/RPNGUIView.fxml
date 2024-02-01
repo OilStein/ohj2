@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="demo.d4.fxRPN.RPNGUIController">
+   <center>
+      <TextArea fx:id="fxTA" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+   <bottom>
+      <HBox BorderPane.alignment="CENTER">
+         <children>
+            <Button  mnemonicParsing="false" onAction="#enter" text="Enter" />
+            <Button  mnemonicParsing="false" onAction="#plus" text="+" />
+            <Button  mnemonicParsing="false" onAction="#minus" text="-" />
+            <Button  mnemonicParsing="false" onAction="#multiply" text="*" />
+            <Button  mnemonicParsing="false" onAction="#divide" text="/" />
+            <Button  mnemonicParsing="false" onAction="#square" text="Sqrt" />
+            <Button  mnemonicParsing="false" onAction="#swap" text="Swap" />
+            <Button  mnemonicParsing="false" onAction="#chs" text="CHS" />
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>

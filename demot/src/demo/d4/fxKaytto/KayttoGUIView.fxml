@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="demo.d4.fxKaytto.KayttoGUIController">
+   <top>
+      <Label text="Kerron sinulle paljonko täytät tänä vuonna!" BorderPane.alignment="CENTER" />
+   </top>
+   <center>
+      <HBox prefHeight="33.0" prefWidth="229.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="27.0" prefWidth="161.0" text="Syntymävuotesi: ">
+               <HBox.margin>
+                  <Insets bottom="2.0" top="2.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="fxTF" onAction="#laske" onKeyReleased="#laske" />
+         </children>
+      </HBox>
+   </center>
+   <bottom>
+      <Label fx:id="fxResult" BorderPane.alignment="CENTER" />
+   </bottom>
+</BorderPane>
